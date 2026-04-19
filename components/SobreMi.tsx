@@ -26,17 +26,17 @@ export default function SobreMi() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}
           <div>
-            <p className="text-blue-600 dark:text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-[0.2em] mb-4">
               Sobre mí
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-700 text-gray-900 dark:text-white mb-5 leading-tight tracking-tight">
+            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight tracking-tight">
               No soy un proveedor.{' '}
-              <span className="text-blue-600 dark:text-blue-500">Soy tu socio de crecimiento.</span>
+              <span className="text-brand-600 dark:text-brand-400">Soy tu socio de crecimiento.</span>
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-4 text-[15px]">
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-4 text-[15px] font-light">
               Soy Alejandro Morales, especialista en crecimiento digital para empresas. No instalo herramientas sueltas: entiendo tu negocio, identifico qué te frena y construyo el sistema exacto que necesitas para escalar.
             </p>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-[15px]">
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-[15px] font-light">
               Combino web, publicidad, redes sociales, email marketing e inteligencia artificial en una sola estrategia cohesionada — para que cada pieza trabaje con las demás y los resultados se multipliquen.
             </p>
           </div>
@@ -46,14 +46,14 @@ export default function SobreMi() {
             {valores.map(({ icon: Icon, titulo, descripcion }) => (
               <div
                 key={titulo}
-                className="flex gap-4 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/8 rounded-xl p-5 hover:border-blue-200 dark:hover:border-blue-500/20 transition-colors duration-200 cursor-default"
+                className="group flex gap-4 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/8 rounded-2xl p-5 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-500/8 hover:border-brand-200 dark:hover:border-brand-500/25 transition-all duration-200 cursor-default"
               >
-                <div className="flex-shrink-0 w-10 h-10 bg-blue-50 dark:bg-blue-600/10 rounded-lg flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <div className="flex-shrink-0 w-10 h-10 bg-brand-50 dark:bg-brand-600/10 rounded-xl flex items-center justify-center group-hover:bg-brand-100 dark:group-hover:bg-brand-600/20 transition-colors duration-200">
+                  <Icon className="w-5 h-5 text-brand-600 dark:text-brand-400" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-600 text-gray-900 dark:text-white text-sm mb-1">{titulo}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{descripcion}</p>
+                  <h3 className="font-heading font-bold text-gray-900 dark:text-white text-sm mb-1">{titulo}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">{descripcion}</p>
                 </div>
               </div>
             ))}

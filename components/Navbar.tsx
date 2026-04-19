@@ -45,7 +45,7 @@ export default function Navbar() {
 
           <a
             href="#contacto"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-150 cursor-pointer"
+            className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-150 cursor-pointer"
           >
             Llamada gratuita
           </a>
@@ -84,7 +84,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setMenuOpen(false)}
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg text-center transition-colors duration-150 cursor-pointer"
+            className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg text-center transition-colors duration-150 cursor-pointer"
           >
             Llamada gratuita
           </a>
