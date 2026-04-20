@@ -3,11 +3,11 @@ import AnimateIn from '@/components/AnimateIn'
 import ChatbotFAQ from './ChatbotFAQ'
 
 export const metadata: Metadata = {
-  title: 'Chatbot de WhatsApp con IA — Atiende clientes 24/7 automáticamente',
-  description: 'Instalo un chatbot de WhatsApp con inteligencia artificial que responde, califica y convierte tus leads automáticamente. Sin que estés tú delante. Resultados desde el día 1.',
+  title: 'Chatbot de WhatsApp con IA para Agencias de Viajes — Atiende y convierte viajeros 24/7',
+  description: 'Instalo un chatbot de WhatsApp con IA específico para agencias de viajes. Responde consultas, recoge datos para presupuestar y califica leads automáticamente — sin que estés tú delante.',
 }
 
-const WA_LINK = 'https://wa.me/34676017218?text=Hola%20Alejandro%2C%20me%20interesa%20el%20chatbot%20de%20WhatsApp%20con%20IA'
+const WA_LINK = 'https://wa.me/34676017218?text=Hola%20Alejandro%2C%20me%20interesa%20el%20chatbot%20de%20WhatsApp%20con%20IA%20para%20mi%20agencia%20de%20viajes'
 
 const features = [
   {
@@ -16,8 +16,17 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    titulo: 'Respuesta en menos de 3 segundos',
-    descripcion: 'Tu bot responde al instante, a cualquier hora, cualquier día del año. Ningún cliente espera.',
+    titulo: 'Disponible 24/7 — cero clientes perdidos',
+    descripcion: 'El bot atiende de noche, fines de semana y festivos. Mientras tú descansas, él recibe a tus viajeros y no deja escapar ninguna oportunidad.',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+      </svg>
+    ),
+    titulo: 'Genera cotizaciones automáticamente',
+    descripcion: 'El bot recoge destino, fechas, personas y presupuesto, y envía la cotización al viajero solo. El agente solo entra cuando hay que cerrar la venta.',
   },
   {
     icon: (
@@ -25,8 +34,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
-    titulo: 'Califica leads automáticamente',
-    descripcion: 'El bot detecta qué clientes tienen interés real y los separa de los que solo curiosean.',
+    titulo: 'Califica viajeros con intención real',
+    descripcion: 'Detecta quién quiere reservar de verdad y quién solo curiosea. Tu equipo dedica el tiempo únicamente a cerrar, no a cualificar leads fríos.',
   },
   {
     icon: (
@@ -34,17 +43,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
       </svg>
     ),
-    titulo: 'Agenda citas sin intervención',
-    descripcion: 'Recoge datos, propone horarios y confirma citas directamente en la conversación.',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-      </svg>
-    ),
-    titulo: 'Escala al humano cuando toca',
-    descripcion: 'Si el cliente necesita atención personalizada, el bot te avisa y transfiere la conversación.',
+    titulo: 'Responde preguntas frecuentes al instante',
+    descripcion: '¿Incluye visado? ¿El vuelo está en el precio? ¿Qué seguro necesito? El bot resuelve todas estas dudas sin que el agente tenga que intervenir.',
   },
   {
     icon: (
@@ -52,8 +52,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
       </svg>
     ),
-    titulo: 'Entrenado con tu negocio',
-    descripcion: 'No es un bot genérico. Habla como tú, conoce tus servicios y responde exactamente lo que necesitas.',
+    titulo: 'Entrenado con IA — responde con empatía',
+    descripcion: 'No suena a robot. Está entrenado con inteligencia artificial para responder de forma cálida y natural, como lo haría tu mejor agente.',
   },
   {
     icon: (
@@ -61,34 +61,34 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
       </svg>
     ),
-    titulo: 'Reportes y métricas reales',
-    descripcion: 'Sabrás cuántas conversaciones hubo, qué se preguntó y cuántos leads se captaron cada semana.',
+    titulo: 'Deja al cliente listo para cerrar',
+    descripcion: 'El bot entrega la cotización, resuelve las últimas dudas y deja al viajero convencido. El agente entra solo a confirmar la reserva — sin trabajo previo.',
   },
 ]
 
 const pasos = [
   {
     num: '01',
-    titulo: 'Analizamos tu negocio',
-    descripcion: 'En una llamada de 30 minutos entiendo cómo funciona tu captación, qué preguntas reciben y qué necesitas automatizar.',
+    titulo: 'Analizamos tu agencia',
+    descripcion: 'En una llamada de 30 minutos entiendo tus destinos, tu proceso de venta y qué preguntas recibes más a menudo por WhatsApp.',
   },
   {
     num: '02',
     titulo: 'Configuro y entreno el bot',
-    descripcion: 'Programo el chatbot con tus servicios, precios y tono de comunicación. En 5-10 días está listo para funcionar.',
+    descripcion: 'Programo y entreno el chatbot con inteligencia artificial: tus paquetes, destinos, precios orientativos y tono de tu agencia.',
   },
   {
     num: '03',
-    titulo: 'Tu negocio trabaja solo',
-    descripcion: 'Desde el día 1 el bot atiende, califica y convierte. Tú recibes solo los leads que de verdad merecen tu tiempo.',
+    titulo: 'El bot trabaja, tú solo cierras',
+    descripcion: 'El bot recibe al viajero, responde todo, genera la cotización y lo deja listo para reservar. Tu agente entra únicamente para confirmar.',
   },
 ]
 
 const stats = [
-  { value: '< 3s', label: 'Tiempo de respuesta' },
+  { value: '< 30s', label: 'Tiempo de respuesta' },
   { value: '24/7', label: 'Disponibilidad' },
-  { value: '+60%', label: 'Más leads atendidos' },
-  { value: '−80%', label: 'Tareas repetitivas' },
+  { value: '+70%', label: 'Más consultas atendidas' },
+  { value: '−80%', label: 'Tiempo en preguntas repetitivas' },
 ]
 
 export default function ChatbotLanding() {
@@ -98,8 +98,8 @@ export default function ChatbotLanding() {
       {/* ── Minimal Nav ───────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/85 backdrop-blur-md border-b border-gray-200/60 dark:border-white/5">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="font-heading font-semibold text-gray-900 dark:text-white text-base tracking-tight">
-            Alejandro Morales
+          <a href="/" className="font-heading font-bold text-gray-900 dark:text-white text-xl tracking-tight">
+            AM<span className="text-brand-600 dark:text-brand-400">.</span>
           </a>
           <a
             href={WA_LINK}
@@ -134,13 +134,13 @@ export default function ChatbotLanding() {
               <AnimateIn animation="fade-up" delay={0}>
                 <div className="inline-flex items-center gap-2 bg-[#25D366]/10 text-[#25D366] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full border border-[#25D366]/20 mb-8">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-                  Chatbot WhatsApp con IA
+                  Chatbot WhatsApp para Agencias de Viajes
                 </div>
               </AnimateIn>
 
               <AnimateIn animation="fade-up" delay={80}>
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-[1.08] tracking-tight mb-6">
-                  Tu negocio responde{' '}
+                  Tu agencia responde{' '}
                   <span className="text-shimmer">en segundos</span>
                   <br />aunque estés durmiendo
                 </h1>
@@ -148,7 +148,7 @@ export default function ChatbotLanding() {
 
               <AnimateIn animation="fade-up" delay={160}>
                 <p className="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-lg">
-                  Instalo un chatbot de WhatsApp con IA que atiende a tus clientes, califica leads y agenda citas automáticamente — sin que estés tú delante.
+                  El bot recibe al viajero, responde sus dudas, genera la cotización y agenda la llamada — todo solo. Tu agente entra únicamente para cerrar la reserva.
                 </p>
               </AnimateIn>
 
@@ -178,15 +178,16 @@ export default function ChatbotLanding() {
               </AnimateIn>
 
               <AnimateIn animation="fade-in" delay={350}>
-                <div className="flex items-center gap-3 text-gray-500 text-sm">
-                  <div className="flex -space-x-2">
-                    {['AM','BL','CR'].map((i) => (
-                      <div key={i} className="w-7 h-7 rounded-full bg-brand-600/20 border-2 border-[#0A0A0A] flex items-center justify-center">
-                        <span className="text-brand-400 text-[9px] font-bold">{i}</span>
-                      </div>
-                    ))}
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://i.pravatar.cc/80?img=47"
+                    alt="Agente de viajes"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[#25D366]/40 shadow-lg"
+                  />
+                  <div>
+                    <p className="text-white text-sm font-semibold leading-tight">Laura M.</p>
+                    <p className="text-gray-400 text-xs leading-snug">"El bot atiende mientras yo duermo.<br />Solo entro a cerrar."</p>
                   </div>
-                  <span>+20 negocios ya lo usan</span>
                 </div>
               </AnimateIn>
             </div>
@@ -208,7 +209,7 @@ export default function ChatbotLanding() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-white text-sm font-semibold leading-none">Asistente IA</p>
+                        <p className="text-white text-sm font-semibold leading-none">Asistente de Viajes IA</p>
                         <p className="text-[#25D366] text-xs mt-0.5">En línea ahora</p>
                       </div>
                     </div>
@@ -219,34 +220,44 @@ export default function ChatbotLanding() {
                     {/* User msg */}
                     <div className="flex justify-end">
                       <div className="bg-[#DCF8C6] rounded-xl rounded-tr-sm px-3 py-2 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800 text-xs leading-relaxed">Hola, quiero información sobre vuestros servicios</p>
-                        <p className="text-gray-400 text-[10px] text-right mt-1">09:14</p>
+                        <p className="text-gray-800 text-xs leading-relaxed">Hola, quiero un viaje a Maldivas para nuestra luna de miel 🌊</p>
+                        <p className="text-gray-400 text-[10px] text-right mt-1">22:11</p>
                       </div>
                     </div>
 
-                    {/* Bot response */}
+                    {/* Bot response 1 */}
                     <div className="flex justify-start">
                       <div className="bg-white rounded-xl rounded-tl-sm px-3 py-2 max-w-[85%] shadow-sm">
-                        <p className="text-gray-800 text-xs leading-relaxed">¡Hola! 👋 Soy el asistente de Alejandro Morales. Estoy aquí para ayudarte.</p>
-                        <p className="text-gray-800 text-xs leading-relaxed mt-1">¿Qué servicio te interesa?</p>
-                        <p className="text-gray-400 text-[10px] text-right mt-1">09:14 ✓✓</p>
+                        <p className="text-gray-800 text-xs leading-relaxed">¡Qué destino tan especial! 💍 Para prepararte la cotización necesito un par de datos. ¿Para cuántas personas y en qué fechas?</p>
+                        <p className="text-gray-400 text-[10px] text-right mt-1">22:11 ✓✓</p>
                       </div>
                     </div>
 
                     {/* User msg 2 */}
                     <div className="flex justify-end">
                       <div className="bg-[#DCF8C6] rounded-xl rounded-tr-sm px-3 py-2 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800 text-xs leading-relaxed">El chatbot de WhatsApp</p>
-                        <p className="text-gray-400 text-[10px] text-right mt-1">09:15</p>
+                        <p className="text-gray-800 text-xs leading-relaxed">2 personas, del 10 al 20 de octubre</p>
+                        <p className="text-gray-400 text-[10px] text-right mt-1">22:12</p>
                       </div>
                     </div>
 
-                    {/* Bot response 2 */}
+                    {/* Bot cotización card */}
                     <div className="flex justify-start">
-                      <div className="bg-white rounded-xl rounded-tl-sm px-3 py-2 max-w-[85%] shadow-sm">
-                        <p className="text-gray-800 text-xs leading-relaxed">Perfecto. En 5-10 días tendrías un bot respondiendo 24/7 por ti. 🚀</p>
-                        <p className="text-gray-800 text-xs leading-relaxed mt-1">¿Quieres que Alejandro te llame hoy?</p>
-                        <p className="text-gray-400 text-[10px] text-right mt-1">09:15 ✓✓</p>
+                      <div className="bg-white rounded-xl rounded-tl-sm px-3 py-2.5 max-w-[90%] shadow-sm border border-[#25D366]/20">
+                        <p className="text-[#075E54] text-[10px] font-bold uppercase tracking-wide mb-1.5">✈️ Cotización Maldivas</p>
+                        <p className="text-gray-500 text-[10px] mb-2">2 pax · 10 noches · Octubre</p>
+                        <div className="space-y-1 mb-2">
+                          <div className="flex justify-between text-xs">
+                            <span className="text-gray-700">Hotel 4★ + vuelo</span>
+                            <span className="text-gray-900 font-semibold">3.200€/pp</span>
+                          </div>
+                          <div className="flex justify-between text-xs">
+                            <span className="text-gray-700">Hotel 5★ + vuelo</span>
+                            <span className="text-gray-900 font-semibold">4.800€/pp</span>
+                          </div>
+                        </div>
+                        <p className="text-[#25D366] text-[10px] font-semibold">✅ Tu agente lo confirma hoy</p>
+                        <p className="text-gray-400 text-[10px] text-right mt-1">22:12 ✓✓</p>
                       </div>
                     </div>
 
@@ -277,7 +288,7 @@ export default function ChatbotLanding() {
 
                 {/* Floating badge */}
                 <div className="absolute -top-4 -right-4 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-green-500/30 animate-float">
-                  Responde en &lt; 3s
+                  Responde en &lt; 30s
                 </div>
               </div>
             </AnimateIn>
@@ -294,20 +305,20 @@ export default function ChatbotLanding() {
             </AnimateIn>
             <AnimateIn animation="fade-up" delay={80}>
               <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 leading-tight">
-                El 78% de los clientes compran al<br className="hidden md:block" />
-                <span className="text-brand-600 dark:text-brand-400"> primero que responde</span>
+                El viajero consulta varias agencias a la vez.<br className="hidden md:block" />
+                <span className="text-brand-600 dark:text-brand-400"> Reserva con la primera que responde</span>
               </h2>
             </AnimateIn>
             <AnimateIn animation="fade-up" delay={160}>
               <p className="text-gray-500 dark:text-gray-400 text-lg font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                Mientras tardas en responder, tu competencia ya ha cerrado la venta. No es un problema de producto — es un problema de velocidad de respuesta.
+                Mientras estás atendiendo otra consulta o fuera de horario, tu competencia ya tiene sus datos y está preparando la propuesta. No es un problema de precio — es un problema de velocidad.
               </p>
             </AnimateIn>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { stat: '12h', label: 'Tiempo medio de respuesta de las empresas', color: 'text-red-500' },
-                { stat: '1/3', label: 'Mensajes de WhatsApp que nunca reciben respuesta', color: 'text-orange-500' },
+                { stat: '68%', label: 'De los viajeros reservan con la primera agencia que les responde', color: 'text-red-500' },
+                { stat: '40%', label: 'De las consultas llegan fuera del horario de oficina', color: 'text-orange-500' },
                 { stat: '5x', label: 'Más probabilidad de cerrar si respondes en menos de 1 minuto', color: 'text-[#25D366]' },
               ].map(({ stat, label, color }, i) => (
                 <AnimateIn key={i} animation="fade-up" delay={i * 80}>
@@ -332,8 +343,8 @@ export default function ChatbotLanding() {
               </AnimateIn>
               <AnimateIn animation="fade-up" delay={80}>
                 <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
-                  Todo lo que necesita tu negocio<br />
-                  <span className="text-shimmer">para no perder ni un lead</span>
+                  Todo lo que necesita tu agencia<br />
+                  <span className="text-shimmer">para no perder ni un viajero</span>
                 </h2>
               </AnimateIn>
             </div>
@@ -367,7 +378,7 @@ export default function ChatbotLanding() {
               </AnimateIn>
               <AnimateIn animation="fade-up" delay={80}>
                 <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-                  En marcha en menos de 2 semanas
+                  En marcha en 4 semanas
                 </h2>
               </AnimateIn>
             </div>
@@ -430,10 +441,10 @@ export default function ChatbotLanding() {
                     Sin compromiso
                   </div>
                   <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-                    ¿Cuántos clientes perdiste ayer por no responder a tiempo?
+                    ¿Cuántos viajeros perdiste ayer por no responder a tiempo?
                   </h2>
                   <p className="text-green-100 text-base font-light mb-8 max-w-xl mx-auto">
-                    Escríbeme ahora y en 24 horas te digo si el chatbot es lo que necesitas y cómo lo implementaríamos en tu negocio.
+                    Escríbeme ahora y en 24 horas te digo si el chatbot es lo que necesitas y cómo lo implementaríamos en tu agencia.
                   </p>
                   <a
                     href={WA_LINK}
@@ -515,13 +526,13 @@ export default function ChatbotLanding() {
             </AnimateIn>
             <AnimateIn animation="fade-up" delay={80}>
               <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.08] mb-6">
-                Deja de perder clientes<br />
+                Deja de perder viajeros<br />
                 <span className="text-shimmer">por no responder a tiempo</span>
               </h2>
             </AnimateIn>
             <AnimateIn animation="fade-up" delay={160}>
               <p className="text-gray-400 text-lg font-light mb-10 max-w-xl mx-auto leading-relaxed">
-                Escríbeme ahora y cuéntame cómo funciona tu negocio. Sin compromiso, sin formularios — solo una conversación directa.
+                Escríbeme ahora y cuéntame cómo funciona tu agencia. Sin compromiso, sin formularios — solo una conversación directa.
               </p>
             </AnimateIn>
             <AnimateIn animation="fade-up" delay={240}>
@@ -548,7 +559,11 @@ export default function ChatbotLanding() {
       {/* ── Minimal Footer ─────────────────────────── */}
       <footer className="bg-[#080808] border-t border-white/5 py-8">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-xs">© 2026 Alejandro Morales · Sistemas Digitales con IA</p>
+          <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
+            <p className="text-gray-600 text-xs">© 2026 AM<span className="text-brand-500">.</span> · Sistemas Digitales con IA</p>
+            <span className="hidden md:block text-gray-700 text-xs">·</span>
+            <a href="/chatbot-whatsapp-con-ia" className="text-gray-400 hover:text-white text-xs transition-colors duration-150 cursor-pointer">Chatbot de WhatsApp con IA para agencias de viajes</a>
+          </div>
           <div className="flex items-center gap-6">
             <a href="/" className="text-gray-600 hover:text-gray-400 text-xs transition-colors duration-150 cursor-pointer">Volver al inicio</a>
             <a href="mailto:alejandroaml0528@gmail.com" className="text-gray-600 hover:text-gray-400 text-xs transition-colors duration-150 cursor-pointer">alejandroaml0528@gmail.com</a>

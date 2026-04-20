@@ -3,28 +3,28 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: '¿Necesito WhatsApp Business API para esto?',
-    a: 'Sí, pero yo me encargo de todo el proceso de activación. No tienes que hacer nada técnico — solo necesito acceso a tu número de WhatsApp Business y me ocupo del resto.',
+    q: '¿El bot puede generar cotizaciones solo, sin que intervenga el agente?',
+    a: 'Sí. El bot recoge destino, fechas, número de personas y presupuesto, genera la cotización y se la envía al viajero al momento. El agente entra directamente a confirmar la reserva — el cliente ya llega convencido.',
+  },
+  {
+    q: '¿Responde preguntas frecuentes como visados, seguros o vuelos incluidos?',
+    a: 'Exactamente para eso está entrenado. Responde al instante las dudas más comunes: visados, seguros de viaje, qué incluye el paquete, condiciones de cancelación... Sin que el agente tenga que estar pendiente.',
+  },
+  {
+    q: '¿El bot suena natural o parece un robot?',
+    a: 'Está entrenado con inteligencia artificial para responder de forma cálida y empática, como lo haría tu mejor agente. Se adapta al tono de tu agencia y nunca suena frío ni genérico.',
+  },
+  {
+    q: '¿Qué pasa si el viajero hace una pregunta que el bot no sabe responder?',
+    a: 'El chatbot detecta cuándo una consulta está fuera de su alcance y escala la conversación al agente con un resumen completo de lo hablado. El viajero nunca queda sin respuesta.',
   },
   {
     q: '¿Cuánto tiempo tarda en estar funcionando?',
-    a: 'Entre 5 y 10 días desde que empezamos. Incluye la configuración técnica, el entrenamiento con la información de tu negocio y las pruebas antes del lanzamiento.',
-  },
-  {
-    q: '¿Qué pasa si el bot no sabe responder algo?',
-    a: 'El chatbot detecta automáticamente cuando una pregunta está fuera de su alcance y escala la conversación a ti o a tu equipo. Nunca deja a un cliente sin respuesta.',
-  },
-  {
-    q: '¿Puedo personalizar qué dice y cómo responde?',
-    a: 'Completamente. El chatbot se entrena con el tono, los servicios, los precios y la información específica de tu negocio. No es un bot genérico — es tu asistente.',
+    a: 'El proceso completo dura aproximadamente 4 semanas: análisis de tu agencia, entrenamiento del bot con tus paquetes y destinos, pruebas y lanzamiento.',
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'El precio depende de la complejidad de tu negocio y las integraciones necesarias. No hay tarifas fijas porque cada sistema es diferente. Escríbeme y te hago una propuesta en 24h.',
-  },
-  {
-    q: '¿Funciona en cualquier sector?',
-    a: 'Sí. He implementado chatbots para clínicas, academias, negocios de servicios, e-commerce y más. Si recibes consultas por WhatsApp, el chatbot puede gestionarlas.',
+    a: 'El precio depende de la complejidad de tu catálogo y las integraciones necesarias. No hay tarifas fijas porque cada agencia es diferente. Escríbeme y te hago una propuesta en 24h.',
   },
 ]
 

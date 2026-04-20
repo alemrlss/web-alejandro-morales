@@ -17,8 +17,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/85 backdrop-blur-md border-b border-gray-200/60 dark:border-white/5 transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="font-heading font-600 text-gray-900 dark:text-white text-base tracking-tight select-none">
-          Alejandro Morales
+        <span className="font-heading font-bold text-gray-900 dark:text-white text-xl tracking-tight select-none">
+          AM<span className="text-brand-600 dark:text-brand-400">.</span>
         </span>
 
         <div className="hidden md:flex items-center gap-8">

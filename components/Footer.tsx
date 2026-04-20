@@ -3,6 +3,7 @@ export default function Footer() {
     { label: 'Sistema de Captación de Clientes', href: '#servicios' },
     { label: 'Sistema de Automatización con IA', href: '#servicios' },
     { label: 'Sistema Completo de Crecimiento', href: '#servicios' },
+    { label: 'Chatbot de WhatsApp con IA para agencias de viajes', href: '/chatbot-whatsapp-con-ia' },
   ]
 
   const nav = [
@@ -17,7 +18,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <h3 className="font-heading font-600 text-gray-900 dark:text-white text-base mb-2 tracking-tight">Alejandro Morales</h3>
+            <h3 className="font-heading font-bold text-gray-900 dark:text-white text-xl mb-2 tracking-tight">AM<span className="text-brand-600 dark:text-brand-400">.</span></h3>
             <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4">
               Sistemas digitales con IA para que tu negocio crezca.
             </p>
@@ -50,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-200 dark:border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-gray-400 dark:text-gray-600 text-xs">© 2026 Alejandro Morales. Todos los derechos reservados.</p>
+          <p className="text-gray-400 dark:text-gray-600 text-xs">© 2026 AM<span className="text-brand-500">.</span> Todos los derechos reservados.</p>
           <p className="text-gray-300 dark:text-gray-700 text-xs">España · Disponible globalmente</p>
         </div>
       </div>
