@@ -98,8 +98,9 @@ export default function ChatbotLanding() {
       {/* ── Minimal Nav ───────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/85 backdrop-blur-md border-b border-gray-200/60 dark:border-white/5">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="font-heading font-bold text-gray-900 dark:text-white text-xl tracking-tight">
-            AM<span className="text-brand-600 dark:text-brand-400">.</span>
+          <a href="/">
+            <img src="/logo-negro.png" alt="AM." className="h-11 w-auto block dark:hidden" />
+            <img src="/logo.png" alt="AM." className="h-11 w-auto hidden dark:block" />
           </a>
           <a
             href={WA_LINK}
@@ -177,19 +178,7 @@ export default function ChatbotLanding() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn animation="fade-in" delay={350}>
-                <div className="flex items-center gap-4">
-                  <img
-                    src="https://i.pravatar.cc/80?img=47"
-                    alt="Agente de viajes"
-                    className="w-12 h-12 rounded-full object-cover border-2 border-[#25D366]/40 shadow-lg"
-                  />
-                  <div>
-                    <p className="text-white text-sm font-semibold leading-tight">Laura M.</p>
-                    <p className="text-gray-400 text-xs leading-snug">"El bot atiende mientras yo duermo.<br />Solo entro a cerrar."</p>
-                  </div>
-                </div>
-              </AnimateIn>
+           
             </div>
 
             {/* WhatsApp Phone Mockup */}

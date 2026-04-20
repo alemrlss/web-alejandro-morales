@@ -18,7 +18,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <h3 className="font-heading font-bold text-gray-900 dark:text-white text-xl mb-2 tracking-tight">AM<span className="text-brand-600 dark:text-brand-400">.</span></h3>
+            <img src="/logo-negro.png" alt="AM." className="h-11 w-auto mb-2 block dark:hidden" />
+            <img src="/logo.png" alt="AM." className="h-11 w-auto mb-2 hidden dark:block" />
             <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4">
               Sistemas digitales con IA para que tu negocio crezca.
             </p>

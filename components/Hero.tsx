@@ -102,15 +102,12 @@ export default function Hero() {
             </div>
 
             {/* Card */}
-            <div className="w-full h-full rounded-3xl bg-gradient-to-br from-brand-50 to-slate-100 dark:from-brand-900/20 dark:to-[#111] border border-brand-100 dark:border-brand-500/20 flex items-center justify-center shadow-2xl shadow-brand-500/10 dark:shadow-brand-500/20 hover:shadow-brand-500/25 transition-shadow duration-300 dark:glow-brand">
-              <div className="text-center">
-                <div className="relative w-24 h-24 rounded-full bg-brand-100 dark:bg-brand-600/20 border-2 border-brand-200 dark:border-brand-500/40 flex items-center justify-center mx-auto mb-3">
-                  <span className="font-heading text-3xl font-extrabold text-brand-600 dark:text-brand-400">AM</span>
-                  {/* Pulse ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-brand-400/40 animate-ping opacity-30 pointer-events-none" />
-                </div>
-                <p className="text-gray-400 dark:text-gray-500 text-xs font-medium">Foto profesional</p>
-              </div>
+            <div className="w-full h-full rounded-3xl overflow-hidden border border-brand-100 dark:border-brand-500/20 shadow-2xl shadow-brand-500/10 dark:shadow-brand-500/20 hover:shadow-brand-500/25 transition-shadow duration-300 dark:glow-brand">
+              <img
+                src="/avatar-test.png"
+                alt="Alejandro Morales"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
             {/* Floating badge */}
