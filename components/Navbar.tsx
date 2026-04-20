@@ -26,7 +26,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-colors duration-150 cursor-pointer"
+              className="nav-link text-gray-500 dark:text-gray-400 hover:text-brand-700 dark:hover:text-brand-300 text-sm font-medium transition-colors duration-150 cursor-pointer"
             >
               {l.label}
             </a>
@@ -44,10 +44,12 @@ export default function Navbar() {
           </button>
 
           <a
-            href="#contacto"
+            href="https://wa.me/34676017218"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-150 cursor-pointer"
           >
-            Llamada gratuita
+            Agenda tu asesoría
           </a>
         </div>
 
@@ -82,11 +84,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="https://wa.me/34676017218"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg text-center transition-colors duration-150 cursor-pointer"
           >
-            Llamada gratuita
+            Agenda tu asesoría
           </a>
         </div>
       )}

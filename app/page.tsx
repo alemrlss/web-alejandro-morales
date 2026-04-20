@@ -5,6 +5,7 @@ import SobreMi from '@/components/SobreMi'
 import Servicios from '@/components/Servicios'
 import ComoFunciona from '@/components/ComoFunciona'
 import ParaQuien from '@/components/ParaQuien'
+import FAQ from '@/components/FAQ'
 import Contacto from '@/components/Contacto'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -30,6 +31,7 @@ export default function Home() {
         <Servicios />
         <ComoFunciona />
         <ParaQuien />
+        <FAQ />
         <Contacto />
       </main>
       <Footer />

@@ -25,3 +25,171 @@ h1, h2, h3, h4 {
 }
 
 * { box-sizing: border-box; }
+
+/* ── Custom Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #7C3AED;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #8B5CF6; }
+* { scrollbar-width: thin; scrollbar-color: #7C3AED transparent; }
+
+/* ── Keyframes — Entrance ────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Keyframes — Futuristic ──────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-10px) rotate(3deg); }
+  66%       { transform: translateY(-6px) rotate(-2deg); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.08); }
+}
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+@keyframes spinReverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes shimmerX {
+  from { background-position: -250% center; }
+  to   { background-position: 250% center; }
+}
+@keyframes borderFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+@keyframes scanline {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes orbitDot {
+  from { transform: rotate(0deg) translateX(36px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(36px) rotate(-360deg); }
+}
+
+/* ── Utility — ambient animations ───────────────── */
+.animate-float      { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: floatSlow 9s ease-in-out infinite; }
+.animate-glow-pulse { animation: glowPulse 4s ease-in-out infinite; }
+.animate-spin-slow  { animation: spinSlow 22s linear infinite; }
+.animate-spin-rev   { animation: spinReverse 18s linear infinite; }
+.animate-blink      { animation: blink 1.2s step-end infinite; }
+
+/* ── Shimmer text (gradient sweep on text) ────────── */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #7C3AED 0%,
+    #A78BFA 35%,
+    #DDD6FE 50%,
+    #A78BFA 65%,
+    #7C3AED 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerX 4s linear infinite;
+}
+
+/* ── Animated gradient border ─────────────────────── */
+.border-glow {
+  position: relative;
+  background: linear-gradient(135deg, #7C3AED, #A78BFA, #6D28D9, #8B5CF6);
+  background-size: 300% 300%;
+  animation: borderFlow 4s ease infinite;
+}
+
+/* ── Glass card (futuristic) ──────────────────────── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139,92,246,0.15);
+}
+.glass-card:hover {
+  border-color: rgba(139,92,246,0.35);
+  background: rgba(139,92,246,0.06);
+}
+
+/* ── Neon glow box-shadow ─────────────────────────── */
+.glow-brand {
+  box-shadow: 0 0 20px rgba(124,58,237,0.35), 0 0 40px rgba(124,58,237,0.15);
+}
+.glow-brand-sm {
+  box-shadow: 0 0 10px rgba(124,58,237,0.3), 0 0 20px rgba(124,58,237,0.12);
+}
+
+/* ── Animation utility — entrance ────────────────── */
+.anim-fade-up    { opacity: 0; }
+.anim-fade-in    { opacity: 0; }
+.anim-slide-left  { opacity: 0; }
+.anim-slide-right { opacity: 0; }
+
+.anim-fade-up.in-view {
+  animation: fadeUp 0.65s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.anim-fade-in.in-view {
+  animation: fadeIn 0.55s ease forwards;
+}
+.anim-slide-left.in-view {
+  animation: slideLeft 0.65s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.anim-slide-right.in-view {
+  animation: slideRight 0.65s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* ── Navbar link underline hover ─────────────────── */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1.5px;
+  background: #7C3AED;
+  border-radius: 99px;
+  transition: width 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ── Futuristic grid overlay ──────────────────────── */
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(124,58,237,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124,58,237,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Dot pattern overlay ──────────────────────────── */
+.dot-overlay {
+  background-image: radial-gradient(circle, rgba(139,92,246,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}

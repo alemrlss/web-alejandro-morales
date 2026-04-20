@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="text-gray-500 dark:text-gray-500 text-sm leading-relaxed mb-4">
               Sistemas digitales con IA para que tu negocio crezca.
             </p>
-            <a href="mailto:alejandroaml0528@gmail.com" className="text-blue-600 dark:text-blue-400 text-xs hover:underline cursor-pointer">
+            <a href="mailto:alejandroaml0528@gmail.com" className="text-brand-600 dark:text-brand-400 text-xs hover:underline cursor-pointer">
               alejandroaml0528@gmail.com
             </a>
           </div>
