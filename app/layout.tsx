@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { Analytics } from "@vercel/analytics/next"
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="geo.country" content="Spain" />
         <meta name="language" content="Spanish" />
       </head>
+      <Analytics />
       <body className={`${montserrat.variable} font-sans antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
