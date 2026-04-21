@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="language" content="Spanish" />
       </head>
       <Analytics />
+      <SpeedInsights />
       <body className={`${montserrat.variable} font-sans antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
