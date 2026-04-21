@@ -3,14 +3,27 @@ import { useState } from 'react'
 import { EnvelopeIcon, PhoneIcon } from '@/components/Icons'
 import AnimateIn from '@/components/AnimateIn'
 
+type Status = 'idle' | 'loading' | 'success' | 'error'
+
 export default function Contacto() {
   const [form, setForm] = useState({ nombre: '', email: '', empresa: '', servicio: '', mensaje: '' })
+  const [status, setStatus] = useState<Status>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = `Consulta web — ${form.servicio || 'General'} — ${form.nombre}`
-    const body = [`Hola Alejandro,`, '', `Nombre: ${form.nombre}`, `Email: ${form.email}`, `Empresa: ${form.empresa || 'No especificada'}`, `Servicio: ${form.servicio || 'No especificado'}`, '', `Mensaje:`, form.mensaje].join('\n')
-    window.location.href = `mailto:alejandroaml0528@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setStatus('success')
+      setForm({ nombre: '', email: '', empresa: '', servicio: '', mensaje: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   const field = 'w-full bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 transition-all duration-150 placeholder-gray-400 dark:placeholder-gray-600'
@@ -35,6 +48,22 @@ export default function Contacto() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Form — 3 cols */}
           <AnimateIn animation="slide-left" delay={100} className="lg:col-span-3">
+            {status === 'success' ? (
+              <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
+                <div className="w-14 h-14 bg-emerald-100 dark:bg-emerald-500/10 rounded-full flex items-center justify-center">
+                  <svg className="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-semibold text-gray-900 dark:text-white mb-1">¡Mensaje enviado!</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">Te responderé en menos de 24 horas. También te llegará una confirmación a tu email.</p>
+                </div>
+                <button onClick={() => setStatus('idle')} className="text-brand-600 dark:text-brand-400 text-sm underline underline-offset-2 cursor-pointer">
+                  Enviar otro mensaje
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -68,11 +97,18 @@ export default function Contacto() {
                 <textarea id="mensaje" required value={form.mensaje} onChange={(e) => setForm({ ...form, mensaje: e.target.value })} placeholder="Cuéntame sobre tu negocio y qué quieres lograr..." rows={5} className={`${field} resize-none`} />
               </div>
 
-              <button type="submit" className="w-full bg-brand-600 hover:bg-brand-700 hover:scale-[1.02] active:scale-[0.98] text-white font-medium py-3 rounded-lg transition-all duration-200 text-sm cursor-pointer shadow-md shadow-brand-600/20 hover:shadow-lg hover:shadow-brand-600/30">
-                Enviar mensaje
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full bg-brand-600 hover:bg-brand-700 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 text-white font-medium py-3 rounded-lg transition-all duration-200 text-sm cursor-pointer shadow-md shadow-brand-600/20 hover:shadow-lg hover:shadow-brand-600/30"
+              >
+                {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
               </button>
-              <p className="text-gray-400 dark:text-gray-600 text-xs text-center">Al enviar se abrirá tu cliente de email con el mensaje listo.</p>
+              {status === 'error' && (
+                <p className="text-red-500 dark:text-red-400 text-xs text-center">Hubo un error al enviar. Intenta de nuevo o escríbeme directamente.</p>
+              )}
             </form>
+            )}
           </AnimateIn>
 
           {/* Info — 2 cols */}
