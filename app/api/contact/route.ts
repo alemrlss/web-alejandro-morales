@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
   try {
     // Notificación a Alejandro — siempre se envía
-    await resend.emails.send({
+    const { error: notifError } = await resend.emails.send({
       from: FROM,
       to: TO,
       subject: `Nueva consulta web — ${nombre} — ${servicio || 'Sin servicio'}`,
@@ -55,39 +55,46 @@ export async function POST(req: Request) {
       `,
     })
 
-    // Confirmación al visitante — solo si el dominio está verificado (FROM distinto a onboarding@resend.dev)
-    if (FROM !== 'onboarding@resend.dev') {
-      await resend.emails.send({
-        from: FROM,
-        to: email,
-        subject: `¡Recibí tu mensaje, ${nombre}!`,
-        html: `
-          <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:40px 24px">
-            <h1 style="margin:0 0 8px;font-size:22px;color:#111">¡Gracias por escribirme, ${nombre}!</h1>
-            <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6">
-              Recibí tu mensaje y me pondré en contacto contigo en <strong>menos de 24 horas</strong>.
-            </p>
-            <p style="margin:0 0 24px;font-size:13px;color:#9ca3af;line-height:1.6">
-              Por favor, no respondas a este correo — no está monitoreado. Si necesitas contactarme directamente, escríbeme por WhatsApp.
-            </p>
+    if (notifError) {
+      console.error('[contact] notificación a Alejandro fallida:', notifError)
+      return NextResponse.json({ error: 'Error al enviar el correo de notificación' }, { status: 500 })
+    }
 
-            <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px">
-              <p style="margin:0;font-size:13px;color:#5b21b6;font-weight:600">Tu consulta fue sobre:</p>
-              <p style="margin:4px 0 0;font-size:13px;color:#6d28d9">${servicio || 'Consulta general'}</p>
-            </div>
+    // Confirmación al visitante
+    const { error: confirmError } = await resend.emails.send({
+      from: FROM,
+      to: email,
+      subject: `¡Recibí tu mensaje, ${nombre}!`,
+      html: `
+        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:40px 24px">
+          <h1 style="margin:0 0 8px;font-size:22px;color:#111">¡Gracias por escribirme, ${nombre}!</h1>
+          <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6">
+            Recibí tu mensaje y me pondré en contacto contigo en <strong>menos de 24 horas</strong>.
+          </p>
+          <p style="margin:0 0 24px;font-size:13px;color:#9ca3af;line-height:1.6">
+            Por favor, no respondas a este correo — no está monitoreado. Si necesitas contactarme directamente, escríbeme por WhatsApp.
+          </p>
 
-            <p style="font-size:14px;color:#6b7280;line-height:1.6">
-              Mientras tanto, si quieres saber más sobre cómo trabajo, puedes visitar mi web o leer sobre los servicios disponibles.
-            </p>
-
-            <div style="margin-top:32px;padding-top:24px;border-top:1px solid #f3f4f6">
-              <p style="margin:0;font-size:14px;color:#111;font-weight:600">Alejandro Morales</p>
-              <p style="margin:2px 0;font-size:13px;color:#6b7280">Sistemas digitales con IA</p>
-              <a href="https://wa.me/34676017218?text=Hola%20Alejandro%2C%20te%20escribo%20desde%20tu%20web" style="font-size:13px;color:#7c3aed;text-decoration:none">WhatsApp: +34 676 017 218</a>
-            </div>
+          <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px">
+            <p style="margin:0;font-size:13px;color:#5b21b6;font-weight:600">Tu consulta fue sobre:</p>
+            <p style="margin:4px 0 0;font-size:13px;color:#6d28d9">${servicio || 'Consulta general'}</p>
           </div>
-        `,
-      })
+
+          <p style="font-size:14px;color:#6b7280;line-height:1.6">
+            Mientras tanto, si quieres saber más sobre cómo trabajo, puedes visitar mi web o leer sobre los servicios disponibles.
+          </p>
+
+          <div style="margin-top:32px;padding-top:24px;border-top:1px solid #f3f4f6">
+            <p style="margin:0;font-size:14px;color:#111;font-weight:600">Alejandro Morales</p>
+            <p style="margin:2px 0;font-size:13px;color:#6b7280">Sistemas digitales con IA</p>
+            <a href="https://wa.me/34676017218?text=Hola%20Alejandro%2C%20te%20escribo%20desde%20tu%20web" style="font-size:13px;color:#7c3aed;text-decoration:none">WhatsApp: +34 676 017 218</a>
+          </div>
+        </div>
+      `,
+    })
+
+    if (confirmError) {
+      console.error('[contact] confirmación al visitante fallida:', confirmError)
     }
 
     return NextResponse.json({ ok: true })
